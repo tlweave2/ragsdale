@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - All Available Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .image-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .image-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #c8102e;
+            word-break: break-all;
+        }
+        .image-type {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ragsdale Image Gallery</h1>
+    <p style="text-align: center; color: #666;">All available images in the images/ directory</p>
+    
+    <div class="gallery">
+        <div class="image-card">
+            <img src="images/art-ragsdale-president.jpg" alt="art-ragsdale-president.jpg">
+            <div class="image-name">art-ragsdale-president.jpg</div>
+            <div class="image-type">Photo - President</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/customer-consultation.jpg" alt="customer-consultation.jpg">
+            <div class="image-name">customer-consultation.jpg</div>
+            <div class="image-type">Photo - Customer Service</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/customer-service-headset.jpg" alt="customer-service-headset.jpg">
+            <div class="image-name">customer-service-headset.jpg</div>
+            <div class="image-type">Photo - Customer Service</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/customer-service-rep.jpg" alt="customer-service-rep.jpg">
+            <div class="image-name">customer-service-rep.jpg</div>
+            <div class="image-type">Photo - Customer Service</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/cutwidth.png" alt="cutwidth.png">
+            <div class="image-name">cutwidth.png</div>
+            <div class="image-type">Hero Image</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/icon-cooling-red.png" alt="icon-cooling-red.png">
+            <div class="image-name">icon-cooling-red.png</div>
+            <div class="image-type">Icon - Cooling</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/icon-heating-red.png" alt="icon-heating-red.png">
+            <div class="image-name">icon-heating-red.png</div>
+            <div class="image-type">Icon - Heating</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/icon-heating.png" alt="icon-heating.png">
+            <div class="image-name">icon-heating.png</div>
+            <div class="image-type">Icon - Heating</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/office-building.jpg" alt="office-building.jpg">
+            <div class="image-name">office-building.jpg</div>
+            <div class="image-type">Photo - Building</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/team-photo.jpg" alt="team-photo.jpg">
+            <div class="image-name">team-photo.jpg</div>
+            <div class="image-type">Photo - Team</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-and-customer-photo.jpg" alt="tech-and-customer-photo.jpg">
+            <div class="image-name">tech-and-customer-photo.jpg</div>
+            <div class="image-type">Photo - Tech & Customer</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-at-back-of-truck.jpg" alt="tech-at-back-of-truck.jpg">
+            <div class="image-name">tech-at-back-of-truck.jpg</div>
+            <div class="image-type">Photo - Tech at Truck</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-explaining-options.jpg" alt="tech-explaining-options.jpg">
+            <div class="image-name">tech-explaining-options.jpg</div>
+            <div class="image-type">Photo - Tech Explaining</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-greeting-customer.jpg" alt="tech-greeting-customer.jpg">
+            <div class="image-name">tech-greeting-customer.jpg</div>
+            <div class="image-type">Photo - Tech Greeting</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-inspecting-furnace.jpg" alt="tech-inspecting-furnace.jpg">
+            <div class="image-name">tech-inspecting-furnace.jpg</div>
+            <div class="image-type">Photo - Tech at Furnace</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-kitchen-consultation.jpg" alt="tech-kitchen-consultation.jpg">
+            <div class="image-name">tech-kitchen-consultation.jpg</div>
+            <div class="image-type">Photo - Kitchen Consult</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-outdoor-unit.jpg" alt="tech-outdoor-unit.jpg">
+            <div class="image-name">tech-outdoor-unit.jpg</div>
+            <div class="image-type">Photo - Outdoor Unit</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-team-meeting.jpg" alt="tech-team-meeting.jpg">
+            <div class="image-name">tech-team-meeting.jpg</div>
+            <div class="image-type">Photo - Team Meeting</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-walking-vans.jpg" alt="tech-walking-vans.jpg">
+            <div class="image-name">tech-walking-vans.jpg</div>
+            <div class="image-type">Photo - Tech Walking</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-with-customer.jpg" alt="tech-with-customer.jpg">
+            <div class="image-name">tech-with-customer.jpg</div>
+            <div class="image-type">Photo - Tech & Customer (OVERUSED - 122 times!)</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-with-homeowner.jpg" alt="tech-with-homeowner.jpg">
+            <div class="image-name">tech-with-homeowner.jpg</div>
+            <div class="image-type">Photo - Tech & Homeowner</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/tech-working-furnace.jpg" alt="tech-working-furnace.jpg">
+            <div class="image-name">tech-working-furnace.jpg</div>
+            <div class="image-type">Photo - Tech Working</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/technician-at-unit.jpg" alt="technician-at-unit.jpg">
+            <div class="image-name">technician-at-unit.jpg</div>
+            <div class="image-type">Photo - Tech at Unit</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/thislogo.png" alt="thislogo.png">
+            <div class="image-name">thislogo.png</div>
+            <div class="image-type">Logo</div>
+        </div>
+        
+        <div class="image-card">
+            <img src="images/van-driveway.jpg" alt="van-driveway.jpg">
+            <div class="image-name">van-driveway.jpg</div>
+            <div class="image-type">Photo - Van</div>
+        </div>
+    </div>
+</body>
+</html>
