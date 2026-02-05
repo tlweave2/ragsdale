@@ -1,4 +1,4 @@
-# Images Needed for Ragsdale Website
+# Images Needed for Ragsdales Website
 
 Based on the original website, here are all the images you need to source:
 
@@ -6,11 +6,11 @@ Based on the original website, here are all the images you need to source:
 
 ### Logo
 - **logo1.png** - Main company logo (already specified)
-- Ragsdale's Heat & Air LLC 30 years logo
+- Ragsdales's Heat & Air LLC 30 years logo
 
 ### Hero Images (Homepage)
 - **hero-technician.jpg** - Main hero image of technician
-- **hero-truck.jpg** - Ragsdale service truck
+- **hero-truck.jpg** - Ragsdales service truck
 
 ### Service Icons (Navigation/Cards)
 - **icon-cooling.png** - Air conditioning icon (white version for nav)
@@ -22,7 +22,7 @@ Based on the original website, here are all the images you need to source:
 ## Priority 2: Team & Company
 
 ### Team Photos
-- **art-ragsdale-president.jpg** - Art Ragsdale, President (multiple angles needed)
+- **art-ragsdale-president.jpg** - Art Ragsdales, President (multiple angles needed)
 - **team-photo.jpg** - Group photo of team
 - **technician-portraits.jpg** - Individual technician photos (need 5-6)
 

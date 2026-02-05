@@ -18,34 +18,29 @@ IMAGE_MAPPINGS = {
     r'alt="Hands shaking icon"': 'images/icon-heating-red.png',  # Placeholder for now
     
     # Hero images
-    r'alt="Ragsdale Hero Placeholder"': 'images/hero-truck.jpg',
-    r'alt="Ragsdale van pulling up driveway"': 'images/van-driveway.jpg',
-    r'alt="Ragsdale employee in back of truck"': 'images/tech-at-back-of-truck.jpg',
-    r'alt="Ragsdale employee smiling by back of truck"': 'images/tech-at-back-of-truck.jpg',
+    r'alt="Ragsdaless Hero Placeholder"': 'images/hero-truck.jpg',
+    r'alt="Ragsdaless van pulling up driveway"': 'images/van-driveway.jpg',
+    r'alt="Ragsdaless employee in back of truck"': 'images/tech-at-back-of-truck.jpg',
+    r'alt="Ragsdaless employee smiling by back of truck"': 'images/tech-at-back-of-truck.jpg',
     
     # Team & Management
-    r'alt="Art Ragsdale, President smiling for camera "': 'images/art-ragsdale-president.jpg',
-    r'alt="Ragsdale Team Photo 2024"': 'images/team-photo.jpg',
-    r'alt="Ragsdale Office"': 'images/office-building.jpg',
+    r'alt="Art Ragsdaless, President smiling for camera "': 'images/art-ragsdales-president.jpg',
+    r'alt="Ragsdaless Team Photo 2024"': 'images/team-photo.jpg',
+    r'alt="Ragsdaless Office"': 'images/office-building.jpg',
     
     # Customer interactions
-    r'alt="Customer greeting Ragsdale technician"': 'images/tech-greeting-customer.jpg',
+    r'alt="Customer greeting Ragsdaless technician"': 'images/tech-greeting-customer.jpg',
     r'alt="Customer service representative with headset on"': 'images/customer-service-headset.jpg',
-    r'alt="Ragsdale Team Member Talking with Homeowner at Kitchen Counter"': 'images/tech-kitchen-consultation.jpg',
-    r'alt="Smiling Customer Service Representative at Ragsdale"': 'images/customer-service-rep.jpg',
-    r'alt="Ragsdale Technician Explaining Options Outdoors"': 'images/tech-explaining-options.jpg',
-    r'alt="HVAC tech talking with homeowner in kitchen"': 'images/tech-kitchen-consultation.jpg',
-    
-    # Technicians at work
-    r'alt="Technician working on furnace"': 'images/tech-working-furnace.jpg',
-    r'alt="HVAC technician inspecting furnace with flashlight"': 'images/tech-inspecting-furnace.jpg',
-    r'alt="Professional HVAC Technician from Ragsdale Inpsecting Outdoor Units"': 'images/tech-outdoor-unit.jpg',
-    r'alt="HVAC tech walking past Ragsdale vans"': 'images/tech-walking-vans.jpg',
-    r'alt="Ragsdale Heating Technician with an Central Valley, CA area homeowner"': 'images/tech-with-homeowner.jpg',
+    r'alt="Ragsdaless Team Member Talking with Homeowner at Kitchen Counter"': 'images/tech-kitchen-consultation.jpg',
+    r'alt="Smiling Customer Service Representative at Ragsdaless"': 'images/customer-service-rep.jpg',
+    r'alt="Ragsdaless Technician Explaining Options Outdoors"': 'images/tech-explaining-options.jpg',
+    r'alt="Professional HVAC Technician from Ragsdaless Inpsecting Outdoor Units"': 'images/tech-outdoor-unit.jpg',
+    r'alt="HVAC tech walking past Ragsdaless vans"': 'images/tech-walking-vans.jpg',
+    r'alt="Ragsdaless Heating Technician with an Central Valley, CA area homeowner"': 'images/tech-with-homeowner.jpg',
     
     # Logos & branding
-    r'alt="Ragsdale\'s Heat &amp; Air LLC"': 'images/logo5.png',
-    r'alt="Ragsdale Heating, Air"': 'images/logo5.png',
+    r'alt="Ragsdaless\'s Heat &amp; Air LLC"': 'images/logo5.png',
+    r'alt="Ragsdaless Heating, Air"': 'images/logo5.png',
     
     # Awards (using logo as placeholder)
     r'alt="President\'s Award logo"': 'images/logo1.png',
@@ -56,7 +51,7 @@ IMAGE_MAPPINGS = {
     r'alt="Owens Cornings AirCare Professional with the Pink Panther"': 'images/logo1.png',
     
     # Generic stats/infographics (using available team photos)
-    r'alt="99% of customers would recommend Ragsdale"': 'images/customer-consultation.jpg',
+    r'alt="99% of customers would recommend Ragsdaless"': 'images/customer-consultation.jpg',
     r'alt="500 hours of training for technicians"': 'images/tech-team-meeting.jpg',
     r'alt="8 years average employee tenure"': 'images/team-photo.jpg',
     
@@ -121,7 +116,7 @@ def replace_placeholders_in_file(filepath):
 
 def main():
     """Process all HTML files in the workspace."""
-    workspace_dir = Path('/workspaces/ragsdale')
+    workspace_dir = Path('/workspaces/ragsdales')
     html_files = list(workspace_dir.glob('*.html'))
     
     print(f"Found {len(html_files)} HTML files to process\n")
