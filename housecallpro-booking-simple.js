@@ -1,15 +1,20 @@
 /**
  * HouseCall Pro Booking Integration - Popup Window Version
  * Opens HouseCall Pro booking in a centered popup window
+ * 
+ * REQUIRES: housecallpro-config.js must be loaded before this script
  */
 
 (function() {
   'use strict';
   
-  // HouseCall Pro Configuration
-  const HOUSECALLPRO_CONFIG = {
-    bookingUrl: 'https://book.housecallpro.com/book/Ragsdales-Heat--Air/024a1eee9a1744658998fb8b5e9b2af5?v2=true&lead_source=website'
-  };
+  // Check if config is loaded
+  if (!window.HOUSECALLPRO_CONFIG) {
+    console.error('HouseCall Pro: Configuration not loaded. Make sure housecallpro-config.js is included before this script.');
+    return;
+  }
+  
+  const HOUSECALLPRO_CONFIG = window.HOUSECALLPRO_CONFIG;
 
   // Open booking in centered popup window
   function openBookingPopup() {

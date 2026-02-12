@@ -1,18 +1,23 @@
 /**
  * HouseCall Pro Booking Integration
  * Replaces ServiceTitan scheduler with HouseCall Pro booking
+ * 
+ * NOTE: This is the iframe/modal version (not currently used)
+ * The simpler popup version (housecallpro-booking-simple.js) is being used instead
+ * 
+ * REQUIRES: housecallpro-config.js must be loaded before this script
  */
 
 (function() {
   'use strict';
   
-  // HouseCall Pro Configuration
-  const HOUSECALLPRO_CONFIG = {
-    bookingUrl: 'https://book.housecallpro.com/book/Ragsdales-Heat--Air/024a1eee9a1744658998fb8b5e9b2af5?v2=true&lead_source=website',
-    apiKey: 'REDACTED_API_KEY',
-    merchantId: 'c19deeac-7f2b-4782-91be-2cf6a1126647',
-    companyId: '024a1eee9a1744658998fb8b5e9b2af5'
-  };
+  // Check if config is loaded
+  if (!window.HOUSECALLPRO_CONFIG) {
+    console.error('HouseCall Pro: Configuration not loaded. Make sure housecallpro-config.js is included before this script.');
+    return;
+  }
+  
+  const HOUSECALLPRO_CONFIG = window.HOUSECALLPRO_CONFIG;
 
   // Create modal HTML
   function createBookingModal() {

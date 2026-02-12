@@ -1,0 +1,15 @@
+# HouseCall Pro Configuration (contains API keys)
+housecallpro-config.js
+
+# Backup files
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
