@@ -21,12 +21,17 @@
         <div class="hcp-modal-overlay"></div>
         <div class="hcp-modal-content">
           <button class="hcp-modal-close" aria-label="Close booking form">&times;</button>
+          <div id="hcp-loading" class="hcp-loading">
+            <div class="hcp-spinner"></div>
+            <p>Loading booking form...</p>
+          </div>
           <iframe 
             id="hcp-booking-iframe" 
-            src="${HOUSECALLPRO_CONFIG.bookingUrl}"
+            src=""
             frameborder="0"
             allowfullscreen
-            style="width: 100%; height: 100%; border: none;">
+            allow="payment"
+            style="width: 100%; height: 100%; border: none; background: white;">
           </iframe>
         </div>
       </div>
@@ -93,6 +98,36 @@
         transform: scale(1.1);
       }
       
+      .hcp-loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+      }
+      
+      .hcp-spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #e74c3c;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: hcp-spin 1s linear infinite;
+        margin: 0 auto 20px;
+      }
+      
+      @keyframes hcp-spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .hcp-loading p {
+        color: #333;
+        font-size: 16px;
+        margin: 0;
+      }
+      
       @media (max-width: 768px) {
         .hcp-modal-content {
           width: 95%;
@@ -108,7 +143,52 @@
   // Open booking modal
   function openBookingModal() {
     const modal = document.getElementById('hcp-booking-modal');
-    if (modal) {
+    const iframe = document.getElementById('hcp-booking-iframe');
+    const loading = document.getElementById('hcp-loading');
+    
+    if (modal && iframe) {
+      // Show loading indicator
+      if (loading) {
+        loading.style.display = 'block';
+      }
+      
+      // Set iframe src to trigger loading
+      if (!iframe.src) {
+        iframe.src = HOUSECALLPRO_CONFIG.bookingUrl;
+        
+        console.log('HouseCall Pro: Loading booking form...', HOUSECALLPRO_CONFIG.bookingUrl);
+        
+        // Hide loading when iframe loads
+        iframe.onload = function() {
+          console.log('HouseCall Pro: Iframe loaded');
+          if (loading) {
+            loading.style.display = 'none';
+          }
+        };
+        
+        // Detect if iframe is blocked
+        iframe.onerror = function() {
+          console.log('HouseCall Pro: Iframe blocked, opening in new window');
+          closeBookingModal();
+          window.open(HOUSECALLPRO_CONFIG.bookingUrl, '_blank', 'width=1000,height=800');
+        };
+        
+        // Check after timeout if iframe loaded
+        setTimeout(function() {
+          if (loading && loading.style.display !== 'none') {
+            console.log('HouseCall Pro: Iframe may be blocked, showing fallback');
+            if (loading) {
+              loading.innerHTML = '<div class="hcp-spinner"></div><p>Having trouble loading?</p><button id="hcp-open-new-window" style="margin-top: 15px; padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Open in New Window</button>';
+              
+              document.getElementById('hcp-open-new-window').onclick = function() {
+                closeBookingModal();
+                window.open(HOUSECALLPRO_CONFIG.bookingUrl, '_blank', 'width=1000,height=800');
+              };
+            }
+          }
+        }, 3000);
+      }
+      
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
       
