@@ -17,14 +17,20 @@
   const HOUSECALLPRO_CONFIG = window.HOUSECALLPRO_CONFIG;
 
   // Open booking in centered popup window
-  function openBookingPopup() {
+  function openBookingPopup(serviceType) {
     const width = 1000;
     const height = 800;
     const left = (screen.width - width) / 2;
     const top = (screen.height - height) / 2;
     
+    // Add service type to URL if specified
+    let bookingUrl = HOUSECALLPRO_CONFIG.bookingUrl;
+    if (serviceType) {
+      bookingUrl += '&service=' + encodeURIComponent(serviceType);
+    }
+    
     const popup = window.open(
-      HOUSECALLPRO_CONFIG.bookingUrl,
+      bookingUrl,
       'HouseCallProBooking',
       `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes,status=yes`
     );
@@ -53,7 +59,14 @@
     const scheduleButton = e.target.closest('.schedule-engine-integration-cta');
     if (scheduleButton) {
       e.preventDefault();
-      openBookingPopup();
+      
+      // Get service type from button or page
+      let serviceType = scheduleButton.getAttribute('data-service');
+      if (!serviceType) {
+        serviceType = document.body.getAttribute('data-service');
+      }
+      
+      openBookingPopup(serviceType);
     }
   });
   
