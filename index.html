@@ -103,16 +103,10 @@ window.digitalLaunchData = window.digitalLaunchData || { scheduleEngine: {}, web
 <script src="etc.clientlibs/wrenchgroup/clientlibs/clientlib-base.lc-6847cf0182e4814abe64f51c694f7f49-lc.min.js"></script>
 <script src="etc.clientlibs/wrenchgroup/clientlibs/clientlib-site.lc-1768964224244-lc.min.js"></script>
 <script async src="etc.clientlibs/wrenchgroup/clientlibs/clientlib-global.lc-364c6940ca2c5e4a686034acf9dc2465-lc.min.js"></script>
-<script>
-// Legacy Schedule Engine disabled; using HouseCall Pro.
-window.digitalLaunchData = window.digitalLaunchData || { scheduleEngine: null, webChat: null, pureChat: null };
-window._scheduler = window._scheduler || null;
-window._satellite = window._satellite || null;
-</script>
 
 <!-- HouseCall Pro Booking Integration -->
 <script src="housecallpro-config.js"></script>
-<script src="housecallpro-booking.js"></script>
+<script src="housecallpro-booking-simple.js"></script>
 <script> if (document.querySelectorAll('#consent').length > 0) { (function (w,d,s,o,f,js,fjs) {w['365Compliance']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);}(window, document, 'script', 'mw', 'https://app.priviq.com/assets/js/365Compliance.min.js'));mw('init',{container:'consent',key:'5d211d85-a41c-41fd-85d3-b421e6b39c1a',host:'https://api.priviq.com',formId:'4e059b59-a802-4b7e-9288-f56c25a29e97'});mw('consent'); }
 </script> <script> if (document.querySelectorAll('#dsar').length > 0) { (function (w,d,s,o,f,js,fjs) {w['365Compliance']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);}(window, document, 'script', 'mw', 'https://app.priviq.com/assets/js/365Compliance.min.js'));mw('init',{container:'dsar',key:'5d211d85-a41c-41fd-85d3-b421e6b39c1a',host:'https://api.priviq.com'});mw('dsar'); }
 </script> <script src="etc.clientlibs/core/wcm/components/commons/datalayer/v1/clientlibs/core.wcm.components.commons.datalayer.v1.lc-70264651675213ed7f7cc5a02a00f621-lc.min.js"></script> <input type="hidden" id="wcmMode" name="wcmMode" value="false"/>
