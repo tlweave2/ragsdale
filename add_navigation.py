@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""
+Add navigation header and footer to simple HTML pages
+"""
+
+def get_header_styles():
+    """Return common header and footer styles"""
+    return """<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
+.site-header { background: #fff; border-bottom: 3px solid #dc2626; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.header-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.site-logo img { height: 60px; width: auto; }
+.site-nav { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; }
+.site-nav a { text-decoration: none; color: #1f2937; font-weight: 600; font-size: 15px; transition: color 0.3s; }
+.site-nav a:hover { color: #dc2626; }
+.header-cta { display: flex; gap: 12px; align-items: center; }
+.btn-phone { background: #dc2626; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 16px; transition: background 0.3s; white-space: nowrap; }
+.btn-phone:hover { background: #b91c1c; }
+.btn-schedule { background: #1e40af; color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; font-size: 16px; border: none; cursor: pointer; transition: background 0.3s; white-space: nowrap; }
+.btn-schedule:hover { background: #1e3a8a; }
+.content { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.content h1 { color: #1e40af; font-size: 2.5em; margin-bottom: 20px; }
+.content h2 { color: #1f2937; font-size: 1.8em; margin-top: 30px; margin-bottom: 15px; }
+.content h3 { color: #374151; font-size: 1.3em; margin-top: 25px; }
+.content ul, .content ol { margin: 15px 0; padding-left: 30px; }
+.content li { margin: 10px 0; }
+.content a { color: #1e40af; text-decoration: underline; }
+.content a:hover { color: #dc2626; }
+.content hr { margin: 40px 0; border: none; border-top: 2px solid #e5e7eb; }
+.site-footer { background: #1f2937; color: #fff; padding: 40px 20px 20px; margin-top: 60px; }
+.footer-container { max-width: 1200px; margin: 0 auto; }
+.footer-logo { text-align: center; margin-bottom: 30px; }
+.footer-logo img { height: 50px; width: auto; }
+.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+.footer-section h3 { color: #dc2626; margin-bottom: 15px; font-size: 16px; }
+.footer-section ul { list-style: none; padding: 0; margin: 0; }
+.footer-section ul li { margin-bottom: 8px; }
+.footer-section a { color: #d1d5db; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+.footer-section a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid #374151; padding-top: 20px; text-align: center; color: #9ca3af; font-size: 14px; }
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; gap: 15px; }
+    .site-nav { order: 3; width: 100%; justify-content: center; gap: 15px; }
+    .header-cta { flex-direction: column; gap: 10px; width: 100%; }
+    .btn-phone, .btn-schedule { width: 100%; text-align: center; }
+    .content h1 { font-size: 2em; }
+    .content h2 { font-size: 1.5em; }
+}
+</style>"""
+
+def get_header():
+    """Return standard header HTML"""
+    return """<header class="site-header">
+    <div class="header-container">
+        <div class="site-logo">
+            <a href="index.html"><img src="images/thislogo.png" alt="Ragsdales's Heat & Air LLC"/></a>
+        </div>
+        <nav class="site-nav">
+            <a href="air-conditioning.html">Air Conditioning</a>
+            <a href="heating.html">Heating</a>
+            <a href="about.html">About</a>
+            <a href="maintenance.html">Maintenance</a>
+            <a href="contact-us.html">Contact</a>
+        </nav>
+        <div class="header-cta">
+            <a href="tel:2096336332" class="btn-phone">(209) 633-6332</a>
+            <button class="btn-schedule housecallpro-trigger">Schedule Now</button>
+        </div>
+    </div>
+</header>"""
+
+def get_footer():
+    """Return standard footer HTML"""
+    return """<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <img src="images/thislogo.png" alt="Ragsdales's Heat & Air LLC"/>
+        </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="air-conditioning.html">Air Conditioning</a></li>
+                    <li><a href="heating.html">Heating</a></li>
+                    <li><a href="repairs.html">Repairs</a></li>
+                    <li><a href="maintenance.html">Maintenance</a></li>
+                    <li><a href="air-quality.html">Air Quality</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="service-area.html">Service Area</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="hvac-help-guides.html">Help Guides</a></li>
+                    <li><a href="financing.html">Financing</a></li>
+                    <li><a href="guarantees-warranties.html">Warranties</a></li>
+                    <li><a href="coupons-and-savings.html">Coupons</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ragsdales's Heat & Air LLC. All rights reserved. | License: #1037539</p>
+            <p>Serving Manteca, Escalon, Farmington, Turlock, Hilmar, Ripon, Lathrop, Oakdale, Merced, Modesto & Central Valley, CA</p>
+        </div>
+    </div>
+</footer>"""
+
+def create_heating_equipment_page():
+    """Create heating-equipment.html with full navigation"""
+    html = f"""<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Furnace & Heating System Installation in Central Valley, CA | Ragsdales's Heat & Air</title>
+<meta name="description" content="Expert furnace and heating system installation in Central Valley, CA. We install high-efficiency furnaces and heat pumps from top brands. Call (209) 633-6332 for a free estimate!"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="canonical" href="heating-equipment.html"/>
+<link rel="shortcut icon" type="image/png" sizes="16x16" href="images/thislogo.png"/>
+{get_header_styles()}
+</head>
+<body>
+{get_header()}
+<div class="content">
+<h1>Heating System Installation in Central Valley, CA</h1>
+
+<h2>New Furnace & Heat Pump Installation from Ragsdales's Heat & Air LLC</h2>
+<p>When Central Valley nights drop below freezing and tule fog settles in, you need a reliable heating system. Ragsdales's Heat & Air LLC installs high-efficiency furnaces and heat pumps that keep your home warm and comfortable all winter long.</p>
+
+<h2>Why Choose Ragsdales for Heating Installation?</h2>
+<ul>
+<li><strong>Certified Technicians:</strong> Factory-trained experts on all major heating brands</li>
+<li><strong>2-year parts &amp; labor warranty on repairs; 5-year for priority members:</strong> Comprehensive protection on qualifying systems</li>
+<li><strong>High-Efficiency Systems:</strong> 95%+ AFUE furnaces that reduce heating costs by 30%+</li>
+<li><strong>Free In-Home Consultations:</strong> Expert recommendations tailored to your home</li>
+<li><strong>Flexible Financing:</strong> Affordable payment plans available</li>
+ <li><strong>Family-Owned & Local:</strong> Serving Central Valley since 2018</li>
+</ul>
+
+<h2>Signs You Need a New Heating System</h2>
+<ul>
+<li>Furnace is 15+ years old</li>
+<li>Frequent repairs becoming costly</li>
+<li>Rising energy bills each winter</li>
+<li>Uneven heating throughout your home</li>
+<li>Yellow pilot light (carbon monoxide risk)</li>
+<li>Excessive dust or dry air</li>
+<li>Strange noises or burning smells</li>
+<li>Your home never feels warm enough</li>
+</ul>
+
+<h2>Heating Systems We Install</h2>
+
+<h3>Gas Furnaces</h3>
+<p>The most popular heating solution in Central Valley:</p>
+<ul>
+<li>80% AFUE standard efficiency models</li>
+<li>95%+ AFUE high-efficiency condensing furnaces</li>
+<li>Natural gas or propane options</li>
+<li>Single-stage, two-stage, or modulating burners</li>
+<li>Variable-speed blower motors for enhanced comfort</li>
+</ul>
+
+<h3>Heat Pumps</h3>
+<p>Energy-efficient heating and cooling in one system:</p>
+<ul>
+<li>All-electric operation (no gas lines needed)</li>
+<li>Heats in winter, cools in summer</li>
+<li>Ideal for mild Central Valley winters</li>
+<li>Lower carbon footprint</li>
+<li>Potential for solar power integration</li>
+</ul>
+
+<h3>Dual-Fuel Systems</h3>
+<p>Best of both worlds:</p>
+<ul>
+<li>Heat pump for mild weather</li>
+<li>Gas furnace backup for cold nights</li>
+<li>Maximum efficiency year-round</li>
+<li>Automatic switching based on outdoor temperature</li>
+</ul>
+
+<h2>Top Heating Brands We Trust</h2>
+<ul>
+<li><strong>Carrier:</strong> Industry-leading reliability and efficiency</li>
+<li><strong>Trane:</strong> Built tough for long-lasting performance</li>
+<li><strong>Lennox:</strong> Advanced technology and comfort features</li>
+<li><strong>American Standard:</strong> Trusted quality and performance</li>
+<li><strong>Rheem:</strong> Efficient and dependable systems</li>
+</ul>
+
+<h2>Our Heating Installation Process</h2>
+<ol>
+<li><strong>Free Home Evaluation:</strong> Assessment of your home's heating needs, insulation, and ductwork</li>
+<li><strong>Customized Recommendations:</strong> Right-sized system for your square footage and layout</li>
+<li><strong>Clear Pricing:</strong> Upfront quotes with no surprises</li>
+<li><strong>Expert Installation:</strong> Most installations completed in approximately 4 hours</li>
+<li><strong>Thorough Testing:</strong> Comprehensive system check and performance verification</li>
+<li><strong>Homeowner Training:</strong> Complete walkthrough of your new system</li>
+<li><strong>Satisfaction Guarantee:</strong> We ensure you're 100% happy with your new heating system</li>
+</ol>
+
+<h2>Heating Efficiency Matters in Central Valley</h2>
+<p>While our winters are milder than many regions, heating costs still add up:</p>
+<ul>
+<li>Nights regularly drop to 30-40°F November through February</li>
+<li>Tule fog creates damp cold that feels colder than the temperature</li>
+<li>Proper sizing prevents short-cycling and wasted energy</li>
+<li>High-efficiency systems pay for themselves in 5-7 years</li>
+<li>Smart thermostats maximize savings and comfort</li>
+</ul>
+
+<h2>Financing Your New Heating System</h2>
+<p>Don't let a broken furnace force you into a rushed decision. We offer:</p>
+<ul>
+<li>Flexible financing with approved credit</li>
+<li>Low monthly payment options</li>
+<li>Seasonal promotions and manufacturer rebates</li>
+<li>Utility company rebate assistance</li>
+</ul>
+<p><a href="financing.html">Explore financing options</a></p>
+
+<h2>Schedule Your Free Heating Installation Estimate</h2>
+<p>Ready to upgrade to an efficient, reliable heating system? Our comfort consultants will design the perfect solution for your home.</p>
+
+<p><strong>Call <a href="tel:2096336332">(209) 633-6332</a></strong> or <a href="contact-us.html">contact us online</a> for your free, no-pressure estimate!</p>
+
+<h3>Serving the Entire Central Valley</h3>
+<p>Manteca • Escalon • Farmington • Turlock • Hilmar • Ripon • Lathrop • Oakdale •</p>
