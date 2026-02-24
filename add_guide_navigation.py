@@ -1,13 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<title>Why Is My Home So Dusty All the Time? | Ragsdales's Heat & Air LLC</title>
-<meta name="description" content="Discover why your Central Valley home stays dusty and how your HVAC system affects indoor air quality. Expert solutions from Ragsdales's Heat & Air LLC."/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="canonical" href="guides/dusty-home.html"/>
-<link rel="shortcut icon" type="image/png" sizes="16x16" href="../images/thislogo.png"/>
-<style>
+#!/usr/bin/env python3
+"""
+Add full navigation (header and footer) to all guide pages in guides/ folder.
+"""
+
+import re
+from pathlib import Path
+
+# CSS styles for the page
+STYLES = """<style>
 * { box-sizing: border-box; }
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -209,10 +209,10 @@ body {
         font-size: 1.5em;
     }
 }
-</style>
-</head>
-<body>
-<header class="site-header">
+</style>"""
+
+# Header HTML (with ../ paths for guides subdirectory)
+HEADER = """<header class="site-header">
     <div class="header-container">
         <div class="site-logo">
             <a href="../index.html">
@@ -231,81 +231,10 @@ body {
             <button class="btn-schedule" onclick="window.HouseCallProScheduler && window.HouseCallProScheduler.open()">Schedule Now</button>
         </div>
     </div>
-</header>
-<div class="content-wrapper">
-<h1>Why Is My Home So Dusty All the Time?</h1>
+</header>"""
 
-<p>Living in Central Valley, California means dealing with agricultural dust, pollen, and dry conditions—but your home shouldn't feel like a dust bowl! If you're constantly cleaning but dust keeps accumulating, your HVAC system might be the culprit.</p>
-
-<h2>HVAC-Related Causes of Excessive Dust</h2>
-
-<h3>1. Dirty or Low-Quality Air Filter</h3>
-<p>Your air filter is the first line of defense against dust. A clogged filter can't trap particles, and cheap fiberglass filters barely work at all.</p>
-<p><strong>Solution:</strong> Use MERV 8-13 rated pleated filters and change them monthly during peak seasons (summer heat, spring allergies). Central Valley's dusty environment demands more frequent changes than the standard 3-month recommendation.</p>
-
-<h3>2. Leaky Ductwork</h3>
-<p>Unsealed or damaged ducts pull in dust from attics, crawl spaces, and wall cavities, then distribute it throughout your home.</p>
-<p><strong>Solution:</strong> Professional duct sealing and cleaning. In older Central Valley homes, ductwork often needs attention.</p>
-
-<h3>3. Poor Ventilation</h3>
-<p>Without proper air exchange, dust particles have nowhere to go and continuously recirculate.</p>
-<p><strong>Solution:</strong> Upgrade to a whole-home ventilation system or ERV (Energy Recovery Ventilator).</p>
-
-<h3>4. No Air Purification System</h3>
-<p>Standard HVAC systems circulate air but don't actively clean it.</p>
-<p><strong>Solution:</strong> Install UV air purifiers or HEPA filtration systems designed for Central Valley's unique air quality challenges.</p>
-
-<h3>5. Dirty Evaporator Coil</h3>
-<p>Dust buildup on the indoor coil reduces efficiency and sends particles back into your home.</p>
-<p><strong>Solution:</strong> Annual professional maintenance includes coil cleaning.</p>
-
-<h2>Non-HVAC Factors Contributing to Dust</h2>
-<ul>
-<li><strong>Location:</strong> Living near agricultural fields, construction, or unpaved roads</li>
-<li><strong>Pets:</strong> Dander and fur add to airborne particles</li>
-<li><strong>Carpeting:</strong> Traps and releases dust; hard floors are easier to keep clean</li>
-<li><strong>Open windows:</strong> Brings in outdoor dust and pollen</li>
-<li><strong>Bedding:</strong> Sheets and blankets shed fibers</li>
-</ul>
-
-<h2>The Central Valley Dust Challenge</h2>
-<p>Our region faces unique air quality challenges:</p>
-<ul>
-<li>Agricultural operations create seasonal dust</li>
-<li>Dry summer heat increases particle circulation</li>
-<li>Valley geography traps pollutants</li>
-<li>Wildfires add smoke and ash during fire season</li>
-</ul>
-
-<p>Your HVAC system works harder here than in most regions, making proper filtration and maintenance even more critical.</p>
-
-<h2>Ragsdales's Complete Air Quality Solutions</h2>
-<ol>
-<li><strong>HVAC Inspection:</strong> We check ductwork, filters, and airflow</li>
-<li><strong>Duct Sealing & Cleaning:</strong> Eliminate hidden dust sources</li>
-<li><strong>Filter Upgrades:</strong> High-efficiency options for Central Valley conditions</li>
-<li><strong>Air Purification Systems:</strong> UV lights, HEPA filters, and whole-home purifiers</li>
-<li><strong>Regular Maintenance:</strong> Prevent dust buildup before it starts</li>
-</ol>
-
-<h2>Quick Fixes You Can Try Today</h2>
-<ul>
-<li>Replace your air filter with a higher MERV rating</li>
-<li>Vacuum vents and returns</li>
-<li>Check for gaps around ductwork in visible areas</li>
-<li>Use doormats and remove shoes indoors</li>
-<li>Run bathroom and kitchen exhaust fans</li>
-<li>Consider a standalone air purifier for bedrooms</li>
-</ul>
-
-<p><strong>Ready to breathe cleaner air?</strong> Our Central Valley team specializes in indoor air quality solutions designed for our unique climate and conditions.</p>
-
-<p><a href="../air-quality.html">Learn about our Air Quality Services</a> or call <strong>(209) 633-6332</strong> for a free consultation!</p>
-
-<hr>
-<p><small><a href="../index.html">← Back to Home</a> | <a href="../air-quality.html">Air Quality Solutions</a></small></p>
-</div>
-<footer class="site-footer">
+# Footer HTML (with ../ paths for guides subdirectory)
+FOOTER = """<footer class="site-footer">
     <div class="footer-container">
         <div class="footer-logo">
             <img src="../images/thislogo.png" alt="Ragsdales's Heat & Air LLC"/>
@@ -353,11 +282,80 @@ body {
             <p>Serving Manteca, Escalon, Farmington, Turlock, Hilmar, Ripon, Lathrop, Oakdale, Merced, Modesto & Central Valley, CA</p>
         </div>
     </div>
-</footer>
+</footer>"""
 
-<!-- HouseCall Pro Booking Integration -->
-<!-- HouseCall Pro Booking Integration -->
-<script src="../housecallpro-config.js"></script>
-<script src="../housecallpro-booking-simple.js"></script>
-</body>
-</html>
+
+def add_navigation_to_guide(filepath):
+    """Add navigation to a guide page."""
+    print(f"Processing {filepath}...")
+    
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Check if navigation already exists
+    if 'site-header' in content:
+        print(f"  ✓ {filepath} already has navigation, skipping")
+        return
+    
+    # Add styles before </head>
+    if STYLES not in content:
+        content = content.replace('</head>', f'{STYLES}\n</head>')
+    
+    # Add header after <body>
+    if '<header class="site-header">' not in content:
+        content = content.replace('<body>', f'<body>\n{HEADER}')
+    
+    # Wrap existing content div in content-wrapper
+    # Find the opening <div class="content"> tag
+    content_match = re.search(r'<div class="content">', content)
+    if content_match:
+        # Replace the opening div
+        content = content.replace('<div class="content">', '<div class="content-wrapper">', 1)
+    
+    # Add footer before the HouseCall Pro scripts or before </body>
+    if '<footer class="site-footer">' not in content:
+        # Find the HouseCall Pro comment or scripts
+        hcp_match = re.search(r'<!-- HouseCall Pro Booking Integration -->', content)
+        if hcp_match:
+            content = content.replace('<!-- HouseCall Pro Booking Integration -->', 
+                                     f'{FOOTER}\n\n<!-- HouseCall Pro Booking Integration -->', 1)
+        else:
+            # If no HouseCall Pro, add before </body>
+            content = content.replace('</body>', f'{FOOTER}\n\n<!-- HouseCall Pro Booking Integration -->\n<script src="../housecallpro-config.js"></script>\n<script src="../housecallpro-booking-simple.js"></script>\n</body>')
+    
+    # Write updated content
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+    
+    print(f"  ✓ Navigation added to {filepath}")
+
+
+def main():
+    """Process all guide pages."""
+    guides_dir = Path('guides')
+    
+    if not guides_dir.exists():
+        print("Error: guides/ directory not found")
+        return
+    
+    guide_files = list(guides_dir.glob('*.html'))
+    
+    if not guide_files:
+        print("No HTML files found in guides/ directory")
+        return
+    
+    print(f"Found {len(guide_files)} guide pages to process\n")
+    
+    for guide_file in guide_files:
+        add_navigation_to_guide(guide_file)
+    
+    print(f"\n✅ Successfully processed {len(guide_files)} guide pages!")
+    print("\nGuide pages now have:")
+    print("  ✓ Full header navigation with logo, menu, phone, and Schedule button")
+    print("  ✓ Professional footer with service links")
+    print("  ✓ Responsive design for mobile devices")
+    print("  ✓ HouseCall Pro booking integration")
+
+
+if __name__ == '__main__':
+    main()
