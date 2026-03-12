@@ -17,8 +17,8 @@ body {
     color: #333;
 }
 .site-header {
-    background: #fff;
-    border-bottom: 3px solid #dc2626;
+    background: #C5192D;
+    border-bottom: 3px solid #C5192D;
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -47,13 +47,13 @@ body {
 }
 .site-nav a {
     text-decoration: none;
-    color: #1f2937;
+    color: #fff;
     font-weight: 600;
     font-size: 15px;
     transition: color 0.3s;
 }
 .site-nav a:hover {
-    color: #dc2626;
+    color: #ffed4e;
 }
 .header-cta {
     display: flex;
@@ -61,10 +61,10 @@ body {
     align-items: center;
 }
 .btn-phone {
-    background: #dc2626;
-    color: white;
+    background: #fff;
+    color: #C5192D;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -78,7 +78,7 @@ body {
     background: #1e40af;
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
     font-size: 16px;
     border: none;
@@ -234,6 +234,23 @@ body {
     color: white !important;
   }
 </style>
+<style>
+  /* Review button visibility fix */
+  .footer__links .a-button--secondary .btn,
+  .footer__links .a-button--secondary {
+    background-color: #f0f0f0 !important;
+    background-image: linear-gradient(180deg, #e0e0e0, #d0d0d0) !important;
+    color: #000 !important;
+    border: 2px solid #999 !important;
+    font-weight: 600 !important;
+  }
+  .footer__links .a-button--secondary:hover .btn,
+  .footer__links .a-button--secondary .btn:hover {
+    background-color: #d0d0d0 !important;
+    background-image: linear-gradient(180deg, #c0c0c0, #b0b0b0) !important;
+  }
+</style>
+<style>
 </head>
 <body>
 <header class="site-header">
