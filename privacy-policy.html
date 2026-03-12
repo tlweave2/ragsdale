@@ -63,7 +63,7 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
   .footer-content { flex-direction: column; gap: 24px; }
 }
 </style>
-<style>/* meeting 2026-03-12: hide eyebrow bar */ .header__eyebrow-container { display: none !important; }</style>
+<style>.header__eyebrow-container { display: none !important; }</style>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   body, html, .cmp-text, .cmp-title, h1, h2, h3, h4, h5, h6, a, button, input, select, textarea {
@@ -71,7 +71,6 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
   }
 </style>
 <style>
-  /* Rounded buttons per 2026-03-12 meeting */
   .servicebtn, .a-button, button, .btn, .cta.button a, 
   [class*="button"], [class*="btn"], input[type="button"], 
   input[type="submit"], a.link-list-item {
@@ -79,7 +78,6 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
   }
 </style>
 <style>
-  /* Header color change to red per 2026-03-12 meeting */
   .header__main, .main-header {
     background-color: #C5192D !important; /* Ragsdale red */
   }
@@ -115,6 +113,7 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
   }
 </style>
 <style>
+<style id="footer-simplify">.footer__links-container{display:none !important}.footer__simple{display:flex;gap:24px;justify-content:space-between;align-items:flex-start;padding:20px 0;flex-wrap:wrap}.footer__simple-left{max-width:520px}.footer__simple-left p{margin:0 0 8px}.footer__simple-social a{margin-right:12px}.footer__simple-map iframe{width:320px;max-width:100%;height:180px;border:0}@media (max-width:900px){.footer__simple{flex-direction:column}.footer__simple-map iframe{width:100%}}</style><style id="services-dropdown">.site-nav .dropdown{position:relative}.site-nav .dropdown-menu{display:none;position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #e5e7eb;box-shadow:0 6px 18px rgba(0,0,0,.1);padding:8px 0;z-index:99;border-radius:0 0 6px 6px}.site-nav .dropdown-menu a{display:block;padding:9px 14px;font-weight:500;color:#1f2937;text-decoration:none}.site-nav .dropdown-menu a:hover{background:#f9fafb;color:#c5192d}.site-nav .dropdown:hover .dropdown-menu{display:block}</style>
 </head>
 <body>
 
@@ -124,16 +123,26 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
       <a href="index.html"><img src="images/thislogo.png" alt="Ragsdales's Heat &amp; Air LLC"/></a>
     </div>
     <nav class="site-nav">
-      <a href="air-conditioning.html">Air Conditioning</a>
-      <a href="heating.html">Heating</a>
-      <a href="about.html">About</a>
-      <a href="maintenance.html">Maintenance</a>
-      <a href="careers.html">Careers</a>
-      <a href="contact-us.html">Contact</a>
-    </nav>
+            <div class="dropdown">
+                <a href="air-conditioning.html">Our Services &#9662;</a>
+                <div class="dropdown-menu">
+                    <a href="air-conditioning.html">Air Conditioning</a>
+                    <a href="heating.html">Heating</a>
+                    <a href="duct-cleaning.html">Duct Cleaning</a>
+                    <a href="free-second-opinions.html">Free Second Opinions</a>
+                    <a href="air-quality.html">Air Quality</a>
+                    <a href="guarantees-warranties.html">Warranties</a>
+                </div>
+            </div>
+            <a href="about.html">About Us</a>
+            <a href="maintenance.html">Energy Management Program</a>
+            <a href="financing.html">Financing</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact-us.html">Contact</a>
+        </nav>
     <div class="header-cta">
       <a href="tel:2096336332" class="btn-phone">(209) 633-6332</a>
-      <button class="btn-schedule housecallpro-trigger">Schedule Now</button>
+      <button class="btn-schedule housecallpro-trigger">Book Now</button>
     </div>
   </div>
 </header>
@@ -193,7 +202,7 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
         <h3>Company</h3>
         <ul>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="service-area.html">Service Area</a></li>
+          <li><a href="service-area.html"> Areas We Proudly Serve </a></li>
           <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
       </div>
