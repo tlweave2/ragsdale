@@ -63,7 +63,6 @@ body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; margin: 0; p
   .footer-content { flex-direction: column; gap: 24px; }
 }
 </style>
-<style>/* meeting 2026-03-12: hide eyebrow bar */ .header__eyebrow-container { display: none !important; }</style>
 </head>
 <body>
 
