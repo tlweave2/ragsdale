@@ -278,7 +278,7 @@ FOOTER = """<footer class="site-footer">
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Ragsdales's Heat & Air LLC. All rights reserved. | License: #1037539</p>
+            <p>© 2026 Ragsdales's Heat & Air LLC. All rights reserved. | License: #1157764</p>
             <p>Serving Manteca, Escalon, Farmington, Turlock, Hilmar, Ripon, Lathrop, Oakdale, Merced, Modesto & Central Valley, CA</p>
         </div>
     </div>

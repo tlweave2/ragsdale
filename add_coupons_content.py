@@ -30,7 +30,7 @@ else:
     print("✗ Could not find air quality card")
 
 # 2. Add United Refrig partnership section after copyright
-copyright_marker = 'License: #1037539</p> </div>'
+copyright_marker = 'License: #1157764</p> </div>'
 united_refrig_section = ''' <div class="footer__partners-section text-center" style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;"> <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">Proud Elite Dealer Partner</h4> <div class="partner-logos d-flex justify-content-center align-items-center flex-wrap gap-3"> <div class="partner-logo-item" style="background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 6px; min-width: 150px;"> <img src="images/united-refrigeration-logo-placeholder.png" alt="United Refrigeration Elite Dealer" style="max-height: 60px; width: auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /> <div style="display: none; color: #333; font-weight: 600; font-size: 0.9rem;">United Refrigeration<br/><span style="font-size: 0.8rem;">Elite Dealer</span></div> </div> </div>  </div>'''
 
 if copyright_marker in content:
